@@ -94,10 +94,12 @@
         max-width: 1050px;
         margin: 0;
         font-family: Coolvetica, "Arial Black", Arial, sans-serif;
+        /* Tamaño original grande para escritorio */
         font-size: clamp(50px, 9.2vw, 136px);
         font-weight: 800;
         letter-spacing: -.065em;
         line-height: .88;
+        word-break: keep-all; /* Evita partir palabras si no es necesario */
       }
 
       h1 span { color: var(--blue); }
@@ -115,6 +117,7 @@
         color: rgba(32, 32, 32, .58);
       }
 
+      /* --- MEDIA QUERIES PARA CELULARES --- */
       @media (max-width: 580px) {
         .page {
           min-height: 100dvh;
@@ -135,15 +138,24 @@
         }
 
         h1 {
-          max-width: 10ch;
-          font-size: clamp(40px, 15vw, 72px);
-          line-height: .92;
-          letter-spacing: -.06em;
-          overflow-wrap: break-word;
+          /* CORRECCIONES AQUÍ: */
+          font-family: "Arial Black", Arial, sans-serif; /* Usar Arial Black para asegurar legibilidad y corte */
+          font-size: 42px; /* Mucho más pequeño para que quepa */
+          line-height: 1.1; /* Aumentar un poco el interlineado para que no se monten las líneas */
+          letter-spacing: -1px;
+          max-width: 100%; /* Ocupa todo el ancho disponible */
+        }
+
+        /* Forzamos un salto de línea específico en móvil para que se vea mejor */
+        h1 br.mobile-break {
+          display: block;
+        }
+        h1 br.desktop-break {
+          display: none;
         }
 
         .copy {
-          max-width: 33ch;
+          max-width: 100%;
           margin-top: 28px;
           font-size: 17px;
           line-height: 1.42;
@@ -155,9 +167,10 @@
         }
       }
 
+      /* Ajuste para pantallas muy pequeñas */
       @media (max-width: 380px) {
         main { padding-block: 44px 34px; }
-        h1 { font-size: clamp(40px, 14.5vw, 55px); }
+        h1 { font-size: 38px; } /* Aún más pequeño para pantallas diminutas */
         .copy { margin-top: 23px; font-size: 15px; }
       }
 
@@ -176,7 +189,8 @@
 
       <main>
         <p class="status">Próximamente</p>
-        <h1>Estamos construyendo<br /><span>algo nuevo.</span></h1>
+        <!-- He añadido clases a los saltos de línea (br) para controlar cuáles se ven en escritorio y cuáles en móvil -->
+        <h1>Estamos<br class="mobile-break" /> construyendo<br class="desktop-break" /><br class="mobile-break" /> <span>algo nuevo.</span></h1>
         <p class="copy">
           Somos conexión, amor y comunidad. Muy pronto vas a encontrar acá un nuevo
           espacio para conocernos y compartir la vida.
