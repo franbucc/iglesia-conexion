@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f4f4f4" />
+    <meta
+      name="description"
+      content="Iglesia Conexión. Somos conexión, amor y comunidad."
+    />
+    <title>Iglesia Conexión | Próximamente</title>
+    <style>
+      :root {
+        --black: #202020;
+        --white: #f4f4f4;
+        --blue: #025eeb;
+        --blue-connection: #2d4b96;
+      }
+
+      * { box-sizing: border-box; }
+
+      html, body { margin: 0; min-height: 100%; }
+
+      body {
+        background: var(--white);
+        color: var(--black);
+        font-family: "Neue Haas Grotesk", "Helvetica Neue", Arial, sans-serif;
+      }
+
+      .page {
+        min-height: 100svh;
+        padding: 34px clamp(24px, 5vw, 72px) 28px;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .page::after {
+        content: "";
+        width: clamp(12px, 1.4vw, 22px);
+        position: absolute;
+        inset: 0 0 0 auto;
+        background: var(--blue);
+      }
+
+      header, footer {
+        padding-right: clamp(10px, 2vw, 28px);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .13em;
+        text-transform: uppercase;
+      }
+
+      .logo {
+        font-family: Coolvetica, "Arial Black", Arial, sans-serif;
+        font-size: 31px;
+        font-weight: 800;
+        letter-spacing: -1.8px;
+        line-height: 1;
+        text-transform: lowercase;
+      }
+
+      main {
+        width: min(100%, 1180px);
+        margin: auto;
+        padding: clamp(68px, 12vh, 130px) 0 72px;
+      }
+
+      .status {
+        margin: 0 0 28px;
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        color: var(--blue-connection);
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: .15em;
+        text-transform: uppercase;
+      }
+
+      .status::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--blue);
+      }
+
+      h1 {
+        max-width: 1050px;
+        margin: 0;
+        font-family: Coolvetica, "Arial Black", Arial, sans-serif;
+        font-size: clamp(58px, 9.2vw, 136px);
+        font-weight: 800;
+        letter-spacing: -.065em;
+        line-height: .88;
+      }
+
+      h1 span { color: var(--blue); }
+
+      .copy {
+        max-width: 560px;
+        margin: 38px 0 0;
+        font-size: clamp(17px, 1.6vw, 21px);
+        line-height: 1.45;
+      }
+
+      footer {
+        padding-top: 22px;
+        border-top: 1px solid rgba(32, 32, 32, .24);
+        color: rgba(32, 32, 32, .58);
+      }
+
+      @media (max-width: 580px) {
+        .page {
+          min-height: 100dvh;
+          padding: 22px 30px 20px 20px;
+        }
+
+        .page::after { width: 10px; }
+        header > span { display: none; }
+        .logo { font-size: 27px; }
+
+        main {
+          padding: clamp(54px, 10vh, 78px) 0 48px;
+        }
+
+        .status {
+          margin-bottom: 22px;
+          font-size: 10px;
+        }
+
+        h1 {
+          max-width: 10ch;
+          font-size: clamp(48px, 15vw, 72px);
+          line-height: .92;
+          letter-spacing: -.06em;
+          overflow-wrap: break-word;
+        }
+
+        .copy {
+          max-width: 33ch;
+          margin-top: 28px;
+          font-size: 17px;
+          line-height: 1.42;
+        }
+
+        footer {
+          padding-top: 16px;
+          font-size: 9px;
+        }
+      }
+
+      @media (max-width: 380px) {
+        main { padding-block: 44px 34px; }
+        h1 { font-size: clamp(43px, 14.5vw, 55px); }
+        .copy { margin-top: 23px; font-size: 15px; }
+      }
+
+      @media (max-height: 620px) and (orientation: landscape) {
+        .page { min-height: 620px; }
+        main { padding-block: 48px; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <div class="logo">conexión</div>
+        <span>Iglesia Conexión</span>
+      </header>
+
+      <main>
+        <p class="status">Próximamente</p>
+        <h1>Estamos construyendo<br /><span>algo nuevo.</span></h1>
+        <p class="copy">
+          Somos conexión, amor y comunidad. Muy pronto vas a encontrar acá un nuevo
+          espacio para conocernos y compartir la vida.
+        </p>
+      </main>
+
+      <footer>
+        <span>Buenos Aires, Argentina</span>
+        <span>2026</span>
+      </footer>
+    </div>
+  </body>
+</html>
